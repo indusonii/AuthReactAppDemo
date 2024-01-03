@@ -1,0 +1,45 @@
+/* Add this CSS to your styles file or use styled-components in React */
+
+/* Optional: Adjust the container size based on your layout */
+.carousel-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the caption */
+    padding: 20px;
+    color: #fff; /* Set the text color to white */
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.5em;
+  }
+  
+  .carousel-caption p {
+    font-size: 1em;
+  }
+  
+  /* Optional: Add styles for carousel controls */
+  .carousel-control-prev,
+  .carousel-control-next {
+    font-size: 2em;
+    color: #fff;
+    background: none;
+    border: none;
+  }
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    color: #aaa;
+  }
+  
+  /* Optional: Style the indicators */
+  .carousel-indicators li {
+    background-color: #bbb;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #333;
+  }
+  

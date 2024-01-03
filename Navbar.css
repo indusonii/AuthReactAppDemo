@@ -1,0 +1,33 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Align items on both ends */
+    background-color: #343a40; /* Update with your desired background color */
+  }
+  
+  .navbar-brand {
+    color: white; /* Update with your desired text color */
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin-right: 10px; /* Adjust the spacing between items */
+  }
+  
+  @media (max-width: 767px) {
+    .navbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .navbar-nav {
+      margin-top: 10px; /* Adjust the spacing between items in mobile view */
+    }
+  }
+  
