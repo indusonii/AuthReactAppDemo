@@ -1,10 +1,10 @@
-// ProfileForm.js
-
 import React, { useState } from 'react';
-import '../styles/Profile.css'
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import '../styles/Profile.css';
 
 const ProfileForm = () => {
-  // State to store form data
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -12,7 +12,6 @@ const ProfileForm = () => {
     bio: '',
   });
 
-  // Handler function to update form data on input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -21,11 +20,13 @@ const ProfileForm = () => {
     });
   };
 
-  // Handler function to submit the form
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic to send the form data to the server or perform other actions
     console.log('Form submitted:', formData);
+    
+    // Navigate to the home page
+    navigate('/');
   };
 
   return (
