@@ -1,8 +1,12 @@
+// Navbar.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import Logout from './Logout'; // Import the Logout component
 import '../styles/Navbar.css';
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
@@ -20,27 +24,39 @@ const Navbar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ">
-          <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/profile">
-              Profile
-            </Link>
-          </li>
-          <li className="nav-item ml-auto">
-            <Link className="nav-link" to="/login">
-              Login
-            </Link>
-          </li>
-          <li className="nav-item ml-auto">
-            <Link className="nav-link" to="/signup">
-              Signup
-            </Link>
-          </li>
+        <ul className="navbar-nav ml-auto">
+          {/* Show Home and Logout only on the Login page */}
+          {location.pathname === '/login' && (
+            <>
+              <li className="nav-item">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Logout />
+              </li>
+            </>
+          )}
+
+          {/* Show all items on other pages */}
+          {location.pathname !== '/login' && (
+            <>
+              <li className="nav-item">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/profile">
+                  Profile
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Logout />
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>

@@ -3,6 +3,7 @@ import HomeCarousel from './HomeCarousel';
 import '../styles/Home.css';
 import { Card } from 'react-bootstrap'; // Import Bootstrap Card component
 
+
 // New Card component
 const CustomCard = ({ title, imageSrc, content }) => {
   return (
